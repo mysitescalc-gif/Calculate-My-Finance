@@ -1,0 +1,500 @@
+/* تنظیمات پایه و متغیرهای رنگی */
+:root {
+    --bg-main: #0B132B;
+    --bg-card: #1C2541;
+    --bg-input: #0B132B;
+    --accent-color: #00E676;
+    --text-main: #FFFFFF;
+    --text-muted: #94A3B8;
+    --border-color: #3A506B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+
+/* هیدر سایت */
+header {
+    background-color: var(--bg-card);
+    padding: 15px 30px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.logo-icon .bar {
+    width: 20px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.logo-highlight {
+    color: var(--accent-color);
+}
+
+/* نوار منوی کتگوری‌ها و دراپ‌داون */
+.nav-wrapper {
+    background-color: #131B2E;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+}
+
+.categories-bar {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.cat-btn {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cat-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-main);
+    border-color: var(--accent-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-card);
+    min-width: 240px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 100;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 5px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 230, 118, 0.1);
+    color: var(--accent-color);
+}
+
+/* دکمه مشاهده همه بخش‌ها */
+.see-all-btn {
+    background-color: var(--accent-color);
+    color: var(--bg-main);
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 230, 118, 0.3);
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.see-all-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* کانتینر اصلی ماشین‌حساب و بخش‌ها */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.calc-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.calc-box h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+/* فرم‌ها و اینپوت‌ها */
+.calc-form-group {
+    margin-bottom: 20px;
+}
+
+.calc-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.calc-form-group input, 
+.calc-form-group select {
+    width: 100%;
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.calc-form-group input:focus, 
+.calc-form-group select:focus {
+    border-color: var(--accent-color);
+}
+
+/* گرید داخلی ماشین‌حساب (ورودی‌ها و نتایج کنار هم) */
+.calc-layout-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+/* باکس نتایج */
+.results-box {
+    background-color: #131B2E;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.results-box h3 {
+    color: var(--accent-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.result-item span {
+    color: var(--text-muted);
+}
+
+.result-item strong {
+    color: var(--text-main);
+    font-size: 16px;
+}
+
+/* کارت‌های ۴۰ گانه (مخفی و نمایشی) */
+.all-sections-hidden {
+    display: none;
+}
+
+.category-title {
+    font-size: 18px;
+    color: var(--accent-color);
+    margin: 30px 0 15px 0;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.mini-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mini-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 230, 118, 0.15);
+}
+
+.mini-card h4 {
+    font-size: 14px;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.mini-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+    background-color: var(--bg-card);
+}
+
+/* ریسپانسیو برای موبایل و تبلت */
+@media (max-width: 768px) {
+    .calc-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    .categories-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cat-btn {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+.clear-btn {
+    background-color: transparent;
+    color: #ff5252;
+    border: 1px solid #ff5252;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.clear-btn:hover {
+    background-color: rgba(255, 82, 82, 0.1);
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    #active-calculator, #active-calculator * {
+        visibility: visible;
+    }
+    
+    #active-calculator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        color: #000 !important; /* سیاه کردن تمام متن‌ها */
+    }
+
+    /* سیاه و پررنگ کردن عناوین و پاراگراف‌ها */
+    #active-calculator h2, 
+    #active-calculator p, 
+    #active-calculator label, 
+    #active-calculator span, 
+    #active-calculator div {
+        color: #000 !important;
+    }
+
+    /* پنهان کردن دکمه‌ها در نسخه چاپی */
+    #active-calculator button[onclick="downloadCalculationPDF()"],
+    .clear-btn {
+        display: none !important;
+    }
+
+    /* ظاهر کادر نتایج */
+    .results-box {
+        border: 1px solid #000 !important;
+        background: #fff !important;
+        padding: 15px !important;
+        margin-top: 20px !important;
+    }
+
+    .results-box h3 {
+        color: #000 !important;
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+        border-bottom: 1px solid #000 !important;
+        padding-bottom: 5px !important;
+    }
+
+    /* اضافه کردن متن تشکر و لینک وب‌سایت در پایین نتایج هنگام پرینت */
+    .results-box::after {
+        content: "Thanks for using Calculate My Finance website\A https://calcmyfinance.net";
+        white-space: pre;
+        display: block;
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px dashed #000;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000 !important;
+    }
+}
+
+
+/* تنظیمات کلی بخش تماس با ما */
+.contact-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-section h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main, #ffffff);
+    text-align: center;
+}
+
+/* فاصله بین فیلدها */
+.contact-section .form-group {
+    margin-bottom: 18px;
+}
+
+/* استایل کادرهای ورودی و متن پیام */
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+}
+
+/* استایل دکمه ارسال */
+#send-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#send-btn:hover {
+    background: linear-gradient(135deg, #0ea5e9, #0369a1);
+    transform: translateY(-1px);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+}
+
+/* استایل کانتینر لوگو */
+.logo {
+  display: flex; /* این خاصیت، آیکون و متن را در یک ردیف قرار می‌دهد */
+  align-items: center; /* این خاصیت، آیکون و متن را عمودی در وسط تراز می‌کند */
+  font-size: 2rem; /* اندازه فونت را به دلخواه تنظیم کنید */
+  font-weight: bold;
+  color: white; /* رنگ متن اصلی */
+}
+
+/* استایل آیکون */
+.logo-icon {
+  /* فقط ابعاد را تنظیم کنید، اجازه دهید تصویر رنگ اصلی خود را داشته باشد */
+  height: 1.5em;
+  width: auto;
+  margin-right: 10px;
+  /* هیچ فیلتری نباید اینجا باشد */
+}
+
+/* استایل هاور (اختیاری) */
+.logo-icon:hover {
+  filter: invert(100%); /* تغییر رنگ آیکون به سفید در حالت هاور */
+}
+
+/* استایل بخش برجسته لوگو */
+.logo-highlight {
+  color: #00cc66; /* رنگ سبز برای "Calc" */
+}
